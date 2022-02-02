@@ -1,0 +1,99 @@
+<mat-toolbar>
+ <span>Sale Receipt</span>
+ <span class="example-spacer"></span>
+ <span class="example-spacer" style="text-align: end;">11</span>
+</mat-toolbar>
+
+<mat-card>
+<form (submit)="OnClickSave(postForm)" #postForm="ngForm">
+  <div class="container" style="border: solid;">
+    <div class="row">
+      <div class="col-6">
+
+      </div>
+      <div class="col-6 text-end">
+        <mat-form-field appearance="fill">
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker" >
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Customer Name</mat-label>
+          <input matInput ngModel name="customerName" placeholder="Kevin Hart">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12" style="margin-bottom: 15px;">
+        <mat-chip-list aria-label="Fish selection">
+          <mat-chip color="primary" selected>Spare Remote</mat-chip>
+          <mat-chip>Spare Car Key(non remote)</mat-chip>
+          <mat-chip>Key Shell Change</mat-chip>
+          <mat-chip>Key Blade Cut</mat-chip>
+          <mat-chip>Lock Rekey</mat-chip>
+          <mat-chip>Ignition Repair</mat-chip>
+          <mat-chip>Keys cut</mat-chip>
+          <mat-chip>Supply Parts</mat-chip>
+          <mat-chip>Other</mat-chip>
+        </mat-chip-list>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Job Description</mat-label>
+          <input matInput ngModel name="jobDescription" placeholder="Job Description">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Price</mat-label>
+          <input matInput ngModel name="pricePaid" placeholder="65$">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-end">
+        <div>
+          <button style="width: 200px; margin: 0px 30px 30px 0px;" mat-raised-button color="primary" type="submit">Save</button>
+          <button style="width: 200px; margin: 0px 30px 30px 0px;" mat-raised-button color="warn" [useExistingCss]="true" printSectionId="printing-container" ngxPrint>Print</button>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="printing-container" style="border: solid #b6b6b6; margin-top: 20px; padding: 20px;">
+    <div class="row">
+      <div class="col-6">
+        <img style="margin-left: 30px;" width="140" src="/assets/logo/tapsylogoinvocieheader.png" />
+        <h4 class="addressMarginclass">Tapsy Service PTY LTD</h4>
+        <h4 class="addressMarginclass">817 Logan Road</h4>
+        <h4 class="addressMarginclass">Holland Park West</h4>
+        <h4 class="addressMarginclass">QLD 4121</h4>
+      </div>
+      <div class="col-6 text-end">
+        <h1>SALE RECEIPT</h1>
+        <h4>NO: 11</h4>
+
+        <div style="margin-top: 40px" class="dateDetailsClass">
+          <h4>Date: 2022/02/12</h4>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</form>
+</mat-card>
